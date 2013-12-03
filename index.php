@@ -72,7 +72,11 @@ function _findPageById($id, $pages)
 $page_id = isset($_GET['id']) ? $_GET['id'] : '';
 $page = findPageById($page_id);
 if (is_null($page)) {
-    $page = findPageById('html-encode');
+    $page = array(
+        'type' => 'page',
+        'id' => 'index',
+        'title' => 'Main',
+    );
 }
 
 $vars = array();

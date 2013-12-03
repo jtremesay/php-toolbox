@@ -1,0 +1,26 @@
+{include="base-top"}
+
+<ul>
+    {loop="$pages"}
+        {if="$value.type === 'page'"}
+            <li>
+                <a href="index.php?id={$value.id}">{$value.title}</a>
+            </li>
+        {elseif="$value.type === 'dropdown'"}
+            <li>
+                {$value.title}
+                <ul>
+                    {loop="$value.pages"}
+                        {if="$value.type === 'page'"}
+                            <li >
+                                <a href="index.php?id={$value.id}">{$value.title}</a>
+                            </li>
+                        {/if}
+                    {/loop}
+                </ul>
+            </li>
+        {/if}
+    {/loop}
+</ul>
+
+{include="base-bottom"}
