@@ -1,0 +1,30 @@
+        </div>
+        <script type="text/javascript">
+$(document).ready(function() {
+    $('.nav-tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    });
+
+    $('.ajax-form').ajaxForm({
+        beforeSubmit: function(data, $form, opts) {
+            $form.find('button[type="submit"]').prop('disabled', true);
+        },
+
+        success: function (responseText, statusText, xhr, $form) {
+            $form.find('button[type="submit"]').prop('disabled', false);
+
+            if (responseText.success) {
+                $form.find('.result').html(responseText.result)
+            } else {
+                if (responseText.error) {
+                    $form.find('.result').html(responseText.error);
+                }
+            }
+        },
+        dataType: 'json'
+    });
+});
+        </script>
+    </body>
+</html>

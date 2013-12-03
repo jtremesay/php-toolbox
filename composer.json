@@ -1,0 +1,6 @@
+{
+    "name": "php_toolbox",
+    "require": {
+        "rain/raintpl": ">=3.0.0"
+    }
+}

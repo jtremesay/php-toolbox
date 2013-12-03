@@ -1,0 +1,7 @@
+caches/*
+vendor/
+
+composer.lock
+config.inc.php
+
+!.gitkeep

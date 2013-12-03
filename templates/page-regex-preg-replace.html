@@ -1,0 +1,43 @@
+{include="base-top"}
+
+<p>
+    <a href="medias/pdf/php_pcre_cheat_sheat.pdf">PCRE cheat sheet</a>
+</p>
+
+<form role="form" class="ajax-form form-horizontal" name="form-preg-replace" action="ajax/regex-preg-replace.php" method="POST">
+    <div class="form-group">
+        <label for="form-preg-replace-pattern" class="col-lg-2 control-label">Pattern</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="form-preg-replace-pattern" name="pattern" placeholder="/^$/">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="form-preg-replace-replacement" class="col-lg-2 control-label">Replacement</label>
+        <div class="col-lg-10">
+            <textarea id="form-preg-replace-replacement" name="replacement" class="form-control" placeholder="Replacement"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="form-preg-replace-subject" class="col-lg-2 control-label">Subject</label>
+        <div class="col-lg-10">
+            <textarea id="form-preg-replace-subject" name="subject" class="form-control" placeholder="Subject"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Result</label>
+        <div class="col-lg-10">
+            <pre class="result"></pre>
+        </div>
+    </div>
+</form>
+
+{include="base-bottom"}
