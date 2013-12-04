@@ -38,9 +38,16 @@ $pages = array(
         'title' => 'Form In/Out',
     ),
     array(
-        'type' => 'page',
-        'id' => 'unserialize',
-        'title' => 'Unserialize'
+        'type' => 'dropdown',
+        'id' => 'serialization',
+        'title' => 'Serialization',
+        'pages' => array(
+            array(
+                'type' => 'page',
+                'id' => 'serialization-unserialize',
+                'title' => 'Unserialize'
+            ),
+        ),
     ),
 );
 
