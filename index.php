@@ -37,6 +37,11 @@ $pages = array(
         'id' => 'form-inout',
         'title' => 'Form In/Out',
     ),
+    array(
+        'type' => 'page',
+        'id' => 'unserialize',
+        'title' => 'Unserialize'
+    ),
 );
 
 
