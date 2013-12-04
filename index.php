@@ -47,6 +47,11 @@ $pages = array(
                 'id' => 'serialization-unserialize',
                 'title' => 'Unserialize'
             ),
+            array(
+                'type' => 'page',
+                'id' => 'serialization-php2json',
+                'title' => 'PHP -> JSON'
+            ),
         ),
     ),
 );
