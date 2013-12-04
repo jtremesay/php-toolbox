@@ -1,6 +1,6 @@
 {include="base-top"}
 
-<div class="form-horizontal" name="form-description">
+<div class="form-horizontal">
     <div class="form-group">
         <label for="form-description" class="col-lg-2 control-label">Form description</label>
         <div class="col-lg-10">
@@ -15,10 +15,8 @@
 </div>
 <hr>
 
-<form role="form" class="form-horizontal" name="form-inout" action="ajax/form-inout.php" method="POST">
-    <div id="dynamic-form">
-
-    </div>
+<form role="form" class="form-horizontal" id="form-inout" action="ajax/form-inout.php" method="POST">
+    <div id="dynamic-form"></div>
 
     <div class="form-group">
         <div class="col-lg-offset-2 col-lg-10">
@@ -29,14 +27,14 @@
     <div class="form-group">
         <label class="col-lg-2 control-label">Sended data</label>
         <div class="col-lg-10">
-            <pre class="result_sended_data"></pre>
+            <pre class="result-sended-data"></pre>
         </div>
     </div>
 
     <div class="form-group">
         <label class="col-lg-2 control-label">Received data</label>
         <div class="col-lg-10">
-            <pre class="result_received_data"></pre>
+            <pre class="result-received-data"></pre>
         </div>
     </div>
 </form>
@@ -92,21 +90,21 @@ $(document).ready(function() {
     $('#form-description-update').click(formDescriptionHandler);
     formDescriptionHandler();
 
-    $('form[name="form-inout"]').ajaxForm({
+    $('#form-inout').ajaxForm({
         beforeSubmit: function(data, $form, opts) {
             $form.find('button[type="submit"]').prop('disabled', true);
 
-            $('.result_sended_data').html(JSON.stringify(data, null, 4));
+            $('.result-sended-data').html(JSON.stringify(data, null, 4));
         },
 
         success: function (responseText, statusText, xhr, $form) {
             $form.find('button[type="submit"]').prop('disabled', false);
 
             if (responseText.success) {
-                $form.find('.result_received_data').html(responseText.result)
+                $form.find('.result-received-data').html(responseText.result)
             } else {
                 if (responseText.error) {
-                    $form.find('.result_received_data').html(responseText.error);
+                    $form.find('.result-received-data').html(responseText.error);
                 }
             }
         },

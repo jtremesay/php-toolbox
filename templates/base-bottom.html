@@ -1,11 +1,6 @@
         </div>
         <script type="text/javascript">
 $(document).ready(function() {
-    $('.nav-tabs a').click(function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    });
-
     $('.ajax-form').ajaxForm({
         beforeSubmit: function(data, $form, opts) {
             $form.find('button[type="submit"]').prop('disabled', true);
