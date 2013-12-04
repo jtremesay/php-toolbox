@@ -52,6 +52,11 @@ $pages = array(
                 'id' => 'serialization-php2json',
                 'title' => 'PHP -> JSON'
             ),
+            array(
+                'type' => 'page',
+                'id' => 'serialization-json2php',
+                'title' => 'JSON -> PHP'
+            )
         ),
     ),
 );

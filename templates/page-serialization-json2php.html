@@ -1,0 +1,25 @@
+{include="base-top"}
+
+<form role="form" class="ajax-form form-horizontal" id="form-unserialize" action="ajax/serialization-json2php.php" method="POST">
+    <div class="form-group">
+        <label for="form-json2php-json-data" class="col-lg-2 control-label">JSON data</label>
+        <div class="col-lg-10">
+            <textarea id="form-json2php-json-data" name="json-data" class="form-control" placeholder="JSON data"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Result</label>
+        <div class="col-lg-10">
+            <pre class="result"></pre>
+        </div>
+    </div>
+</form>
+
+{include="base-bottom"}
