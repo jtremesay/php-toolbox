@@ -12,9 +12,7 @@ class CMS
     public function renderAskedPage()
     {
         $page_id = isset($_GET['id']) ? $_GET['id'] : '';
-        $render = $this->renderPage($page_id);
-
-        return $render;
+        $this->renderPage($page_id);
     }
 
 
@@ -38,6 +36,8 @@ class CMS
         $snippet_path = 'snippets/'.$snippet_name.'.php';
         if (file_exists($snippet_path)) {
             require $snippet_path;
+
+            page_snippet_callback($vars);
         }
 
 
@@ -45,13 +45,11 @@ class CMS
         $template_path = 'templates/'.$template_name.'.html';
         if (file_exists($template_path)) {
             $vars['template_name'] = $template_name;
+
+            $tpl = new Rain\Tpl();
+            $tpl->assign($vars);
+            $tpl->draw('base');
         }
-
-        $tpl = new Rain\Tpl();
-        $tpl->assign($vars);
-        $render = $tpl->draw('base', true);
-
-        return $render;
     }
 
 
