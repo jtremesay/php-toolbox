@@ -59,6 +59,28 @@ $pages = array(
     ),
     array(
         'type' => 'dropdown',
+        'id' => 'serialization',
+        'title' => 'Serialization',
+        'pages' => array(
+            array(
+                'type' => 'page',
+                'id' => 'serialization-unserialize',
+                'title' => 'Unserialize'
+            ),
+            array(
+                'type' => 'page',
+                'id' => 'serialization-php2json',
+                'title' => 'PHP -> JSON'
+            ),
+            array(
+                'type' => 'page',
+                'id' => 'serialization-json2php',
+                'title' => 'JSON -> PHP'
+            )
+        ),
+    ),
+    array(
+        'type' => 'dropdown',
         'id' => 'regex',
         'title' => 'Regex',
         'pages' => array(
