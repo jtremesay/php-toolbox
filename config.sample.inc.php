@@ -11,3 +11,6 @@ Rain\Tpl::configure('base_url', $project_base);
 Rain\Tpl::configure('tpl_ext', 'html');
 Rain\Tpl::configure('path_replace', true);
 Rain\Tpl::configure('debug', true);
+
+// Navigation
+$pages = array();
