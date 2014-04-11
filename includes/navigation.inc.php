@@ -9,13 +9,34 @@ $pages = array(
         'pages' => array(
             array(
                 'type' => 'page',
+                'id' => 'encoding-base64-encode',
+                'title' => 'Base 64 Encode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
+            ),
+            array(
+                'type' => 'page',
+                'id' => 'encoding-base64-decode',
+                'title' => 'Base 64 Decode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form'
+            ),
+            array(
+                'type' => 'separator'
+            ),
+            array(
+                'type' => 'page',
                 'id' => 'encoding-html-encode',
                 'title' => 'HTML Encode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'encoding-html-decode',
                 'title' => 'HTML Decode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'separator'
@@ -24,11 +45,15 @@ $pages = array(
                 'type' => 'page',
                 'id' => 'encoding-url-encode',
                 'title' => 'URL Encode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'encoding-url-decode',
                 'title' => 'URL Decode',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
         )
     ),
