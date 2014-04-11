@@ -17,12 +17,20 @@ function form_snippet(&$template_vars, $form)
             $field['id'] = 'text';
         }
 
+        if (empty($field['name'])) {
+            $field['name'] = $field['id'];
+        }
+
         if (empty($field['label'])) {
             $field['label'] = 'Text';
         }
 
         if (!isset($field['placeholder'])) {
             $field['placeholder'] = '';
+        }
+
+        if (empty($field['tag'])) {
+            $field['tag'] = 'input';
         }
     }
 
@@ -74,8 +82,97 @@ function page_snippet_callback(&$template_vars)
                 ),
             ),
         ),
+        'regex-preg-match' => array(
+            'header' => 'form-regex-header',
+            'fields' => array(
+                array(
+                    'id' => 'pattern',
+                    'label' => 'Pattern',
+                    'placeholder' => '/^$/',
+                ),
+                array(
+                    'id' => 'subject',
+                    'label' => 'Subject',
+                    'placeholder' => 'Subject',
+                    'tag' => 'textarea',
+                ),
+                array(
+                    'id' => 'flags',
+                    'label' => 'Flags',
+                    'tag' => 'checkboxes',
+                    'checkboxes' => array(
+                        array(
+                            'id' => 'flag-offset-capture',
+                            'name' => 'flags[]',
+                            'label' => 'PREG_OFFSET_CAPTURE',
+                            'value' => PREG_OFFSET_CAPTURE,
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'regex-preg-match-all' => array(
+            'header' => 'form-regex-header',
+            'fields' => array(
+                array(
+                    'id' => 'pattern',
+                    'label' => 'Pattern',
+                    'placeholder' => '/^$/',
+                ),
+                array(
+                    'id' => 'subject',
+                    'label' => 'Subject',
+                    'placeholder' => 'Subject',
+                    'tag' => 'textarea',
+                ),
+                array(
+                    'id' => 'flags',
+                    'label' => 'Flags',
+                    'tag' => 'checkboxes',
+                    'checkboxes' => array(
+                        array(
+                            'id' => 'flag-pattern-order',
+                            'name' => 'flags[]',
+                            'label' => 'PREG_PATTERN_ORDER',
+                            'value' => PREG_PATTERN_ORDER,
+                        ),
+                        array(
+                            'id' => 'flag-set-order',
+                            'name' => 'flags[]',
+                            'label' => 'PREG_SET_ORDER',
+                            'value' => PREG_SET_ORDER,
+                        ),
+                        array(
+                            'id' => 'flag-offset-capture',
+                            'name' => 'flags[]',
+                            'label' => 'PREG_OFFSET_CAPTURE',
+                            'value' => PREG_OFFSET_CAPTURE,
+                        ),
+                    ),
+                ),
+            ),
+        ),
+        'regex-preg-replace' => array(
+            'fields' => array(
+                array(
+                    'id' => 'pattern',
+                    'label' => 'Pattern',
+                    'placeholder' => '/^$/',
+                ),
+                array(
+                    'id' => 'replacement',
+                    'label' => 'Replacement',
+                    'placeholder' => 'A replacement text',
+                ),
+                array(
+                    'id' => 'subject',
+                    'label' => 'Subject',
+                    'placeholder' => 'Some text',
+                    'tag' => 'textarea',
+                ),
+            ),
+        ),
     );
-
 
     $page = $template_vars['current_page'];
     $form = $forms[$page['id']];

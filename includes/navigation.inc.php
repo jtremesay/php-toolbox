@@ -65,17 +65,23 @@ $pages = array(
             array(
                 'type' => 'page',
                 'id' => 'regex-preg-match',
-                'title' => 'preg_match'
+                'title' => 'preg_match',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'regex-preg-match-all',
-                'title' => 'preg_match_all'
+                'title' => 'preg_match_all',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'regex-preg-replace',
-                'title' => 'preg_replace'
+                'title' => 'preg_replace',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
         )
     ),

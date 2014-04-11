@@ -1,3 +1,7 @@
+{if="!empty($form.header)"}
+    {include="$form.header"}
+{/if}
+
 <form role="form" class="ajax-form form-horizontal" name="form-{$form.namespace}" action="ajax/{$form.action}" method="POST">
     <input type="hidden" name="submit" value="true">
 
@@ -5,7 +9,20 @@
         <div class="form-group">
             <label for="form-{$form.namespace}-{$value.id}" class="col-lg-2 control-label">{$value.label}</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="form-{$form.namespace}-{$value.id}" name="{$value.id}" placeholder="{$value.placeholder}" />
+                {if="$value.tag == 'input'"}
+                    <input type="text" class="form-control" id="form-{$form.namespace}-{$value.id}" name="{$value.name}" placeholder="{$value.placeholder}" />
+                {elseif="$value.tag == 'textarea'"}
+                    <textarea id="form-{$form.namespace}-{$value.id}" name="{$value.name}" class="form-control" placeholder="{$value.placeholder}"></textarea>
+                {elseif="$value.tag == 'checkboxes'"}
+                    {loop="$value.checkboxes"}
+                        <div class="checkbox">
+                            <label for="form-{$form.namespace}-{$value.id}">
+                                <input type="checkbox" name="flags[]" id="form-{$form.namespace}-{$value.id}" value="{$value.value}">
+                                {$value.label}
+                            </label>
+                        </div>
+                    {/loop}
+                {/if}
             </div>
         </div>
     {/loop}
