@@ -17,6 +17,13 @@ $(document).ready(function() {
                 }
             }
         },
+
+        error: function (xhr, statusText,   responseText, $form) {
+            $form.find('button[type="submit"]').prop('disabled', false);
+
+            $form.find('.result').html(statusText + ": " + responseText);
+        },
+
         dataType: 'json'
     });
 });
