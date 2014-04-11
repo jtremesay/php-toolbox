@@ -65,17 +65,23 @@ $pages = array(
             array(
                 'type' => 'page',
                 'id' => 'serialization-unserialize',
-                'title' => 'Unserialize'
+                'title' => 'Unserialize',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'serialization-php2json',
-                'title' => 'PHP -> JSON'
+                'title' => 'PHP -> JSON',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             ),
             array(
                 'type' => 'page',
                 'id' => 'serialization-json2php',
-                'title' => 'JSON -> PHP'
+                'title' => 'JSON -> PHP',
+                'snippet' => 'generic-form',
+                'template' => 'generic-form',
             )
         ),
     ),

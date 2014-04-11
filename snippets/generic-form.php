@@ -82,6 +82,33 @@ function page_snippet_callback(&$template_vars)
                 ),
             ),
         ),
+        'serialization-unserialize' => array(
+            'fields' => array(
+                array(
+                    'id' => 'serialized-data',
+                    'label' => 'Serialized data',
+                    'placeholder' => 'Serialized data',
+                ),
+            ),
+        ),
+        'serialization-php2json' => array(
+            'fields' => array(
+                array(
+                    'id' => 'serialized-data',
+                    'label' => 'Serialized data',
+                    'placeholder' => 'Serialized data',
+                ),
+            ),
+        ),
+        'serialization-json2php' => array(
+            'fields' => array(
+                array(
+                    'id' => 'json-data',
+                    'label' => 'JSON data',
+                    'placeholder' => 'JSON data',
+                ),
+            ),
+        ),
         'regex-preg-match' => array(
             'header' => 'form-regex-header',
             'fields' => array(
