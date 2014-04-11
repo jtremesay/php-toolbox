@@ -39,14 +39,16 @@ class CMS
             require $snippet_path;
         }
 
-        $render = '';
+
         $template_name = $page['type'].'-'.$page['id'];
         $template_path = 'templates/'.$template_name.'.html';
         if (file_exists($template_path)) {
-            $tpl = new Rain\Tpl();
-            $tpl->assign($vars);
-            $tpl->draw($template_name);
+            $vars['template_name'] = $template_name;
         }
+
+        $tpl = new Rain\Tpl();
+        $tpl->assign($vars);
+        $render = $tpl->draw('base', true);
 
         return $render;
     }
