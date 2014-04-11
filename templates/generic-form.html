@@ -1,0 +1,27 @@
+<form role="form" class="ajax-form form-horizontal" name="form-{$form.namespace}" action="ajax/{$form.action}" method="POST">
+    <input type="hidden" name="submit" value="true">
+
+    {loop="$form.fields"}
+        <div class="form-group">
+            <label for="form-{$form.namespace}-{$value.id}" class="col-lg-2 control-label">{$value.label}</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="form-{$form.namespace}-{$value.id}" name="{$value.id}" placeholder="{$value.placeholder}" />
+            </div>
+        </div>
+    {/loop}
+
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Result</label>
+        <div class="col-lg-10">
+            <pre class="result"></pre>
+        </div>
+    </div>
+</form>
