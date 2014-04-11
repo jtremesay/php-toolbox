@@ -34,13 +34,14 @@ class CMS
         $vars['current_page'] = $page;
 
 
-        $snippet_path = 'snippets/'.$page['id'].'.php';
+        $snippet_name = isset($page['snippet']) ? $page['snippet'] : $page['id'];
+        $snippet_path = 'snippets/'.$snippet_name.'.php';
         if (file_exists($snippet_path)) {
             require $snippet_path;
         }
 
 
-        $template_name = $page['type'].'-'.$page['id'];
+        $template_name = isset($page['template']) ? $page['template'] : $page['type'].'-'.$page['id'];
         $template_path = 'templates/'.$template_name.'.html';
         if (file_exists($template_path)) {
             $vars['template_name'] = $template_name;
