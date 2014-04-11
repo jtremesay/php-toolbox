@@ -1,0 +1,27 @@
+{include="base-top"}
+
+<form role="form" class="ajax-form form-horizontal" name="form-encoding-url-decode" action="ajax/encoding-url-decode.php" method="POST">
+    <input type="hidden" name="submit" value="true">
+
+    <div class="form-group">
+        <label for="form-encoding-url-decode-text" class="col-lg-2 control-label">Text</label>
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="form-encoding-url-decode-text" name="text" placeholder="Text to decode" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Result</label>
+        <div class="col-lg-10">
+            <pre class="result"></pre>
+        </div>
+    </div>
+</form>
+
+{include="base-bottom"}
