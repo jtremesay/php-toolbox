@@ -23,9 +23,9 @@
     </div>
 
     <div class="form-group">
-        <label class="col-lg-2 control-label">Sended data</label>
+        <label class="col-lg-2 control-label">Sent data</label>
         <div class="col-lg-10">
-            <pre class="result-sended-data"></pre>
+            <pre class="result-sent-data"></pre>
         </div>
     </div>
 
@@ -92,7 +92,7 @@ $(document).ready(function() {
         beforeSubmit: function(data, $form, opts) {
             $form.find('button[type="submit"]').prop('disabled', true);
 
-            $('.result-sended-data').html(JSON.stringify(data, null, 4));
+            $('.result-sent-data').html(JSON.stringify(data, null, 4));
         },
 
         success: function (responseText, statusText, xhr, $form) {
